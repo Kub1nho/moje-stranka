@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/*užitečná věc, dá se s tím mmnoho změnit*/
+:root{
+  --color-1: #0f1016;
+  --text-color: #f0f0f0;
+  --accent-color: #006aff;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 12pt;
+  font-family: Poppins, Segoe UI, Tahoma, sans-serif;
+  height: 100%;
+}
+
+body{
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  height: 60px;
+  background-color: var(--color-1);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.links-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+nav a {
+  height: 100%;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+nav a:hover {
+  background-color: var(--accent-color);
+}
+
+nav .home-link {
+  margin-right: auto;
+}
+
+nav svg {
+  fill: var(--text-color);
+}
+
+#sidebar-active {
+  display: none;
+}
+/*responsive nav bar*/
+.open-sidebar-button, .close-sidebar-button {
+  display: none;
+}
+
+@media(max-width: 450px){
+  .links-container{
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 10;
+    width: 300px;
+    background-color: var(--color-1);
+    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+    transition: 0.75s ease-out;
+  }
+  nav a{
+    box-sizing: border-box;
+    height: auto;
+    width: 100%;
+    padding: 20px 30px;
+    justify-content: flex-start;
+  }
+  .open-sidebar-button, .close-sidebar-button{
+    padding: 20px;
+    display: block;
+  }
+  #sidebar-active:checked ~ .links-container{
+    right: 0;
+  }
+  #sidebar-active:checked ~ #overlay{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+  }
+  .h1 {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/*web uvod*/
+.h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.dtop {
+  color: rgb(0, 0, 0);
+}
+
+.dtext1 {
+  width: 80%;
+  margin: auto;
+  padding-top: 80px;
+  padding-bottom: 50px;
+}
+
+.dtextone {
+  flex-basis: 48%;
+  padding: 30px  2px;
+}
+
+.dtextone img {
+  width: 100%;
+}
+
+.dtextone h1 {
+  padding-top: 0;
+}
+
+.dtextone p {
+  padding: 15px 0  25px;
+}
+
+/*ome*/
+.ometop {
+  width: 80%;
+  margin: auto;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.ometext2 img {
+  width: 100%;
+}
+
+.ometext1 {
+  flex: 1;
+  flex-basis: 48%;
+  padding: 30px 2px;
+}
+
+.ometext2 {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ometext1 h1{
+  padding-top: 0;
+}
+
+.ometext1 p {
+  padding: 15px 0 25px;
+}
+/*Projekty*/
+.protop {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 50px;
+}
+
+h1 {
+  font-size: 36px;
+  justify-content: center;
+}
+
+p {
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+  padding: 10px;
+}
+
+/*me zajumy*/
+.boxiky {
+  margin-top: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.box {
+  flex-basis: 31%;
+  background: rgb(150, 29, 29);
+  border-radius: 10px;
+  margin-top: 5%;
+  padding: 20px 12px;
+  box-sizing: border-box;
+  transition: 0.5s;
+  margin-bottom: 35px;
+}
+
+.box p{ 
+  color: white ;
+}
+
+.box h3 {
+  color: white ;
+}
+
+h3 {
+  text-align: center;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.box:hover {
+  box-shadow:  0 0 25px rgb(255, 255, 22);
+}
+/*me sny*/
+.box2:hover {
+  box-shadow:  0 0 25px rgb(255, 255, 22);
+}
+
+.box2 {
+  flex-basis: 31%;
+  background: rgb(8, 5, 136);
+  border-radius: 10px;
+  margin-top: 5%;
+  padding: 20px 12px;
+  box-sizing: border-box;
+  transition: 0.5s;
+  margin-bottom: 35px;
+}
+
+.box2 p{ 
+  color: white ;
+}
+
+.box2 h3{ 
+  color: white ;
+}
+
+.redblue {
+  align-self: center;
+  flex-basis: 31%;
+  margin-top: 5%;
+  padding: 20px 12px;
+  margin-bottom: 35px;
+  width: 280px;
+  height: 280px;
+}
+/*muj sen*/
+.msentop1 img {
+  width: 100%;
+}
+
+/*boxy media*/
+@media (max-width: 700px){
+  .boxiky{
+    flex-direction: column;
+  }
+  .msentop {
+    flex-direction: column;
+  }
+}
+
+/*můj sen*/
+.msentop {
+  width: 80%;
+  margin: auto;
+  padding-top: 80px;
+  padding-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+/*patka*/
+footer {
+  background-color: rgb(89, 15, 15);
+  padding: 20px;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  /*footer fix na bot, ale ne tak doleca u delších stránek, a na mobilu*/
+  margin-top: auto;
+}
+
+
+footer p {
+  color: white;
+}
+
+footer h3 {
+  color: white;
+}
+
+.kontankt {
+  display: flex;
+  max-width: 600px;
+  background-color: #2e1212;
+  color: white;
+  padding: 60px;
+  text-align: center;
+}
